@@ -1,0 +1,12 @@
+* { 
+    border: 2px solid red;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.gridItem {
+    padding: 20px;
+}
