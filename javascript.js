@@ -1,5 +1,4 @@
 const container = document.querySelector('#container');
-const gridItem = document.querySelector('gridItem');
 
 const divOne = document.createElement('div');
 const divTwo = document.createElement('div');
@@ -51,4 +50,13 @@ divThirteen.classList.add('gridItem');
 divFourteen.classList.add('gridItem');
 divFifteen.classList.add('gridItem');
 divSixteen.classList.add('gridItem');
+
+let gridItem = document.getElementsByClassName("gridItem");
+
+for (let i = 0; i < gridItem.length; ++i){
+gridItem[i].addEventListener('mouseenter', () => {
+  gridItem[i].classList.add('gridChosen');
+});
+}
+
 

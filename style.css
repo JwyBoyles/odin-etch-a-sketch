@@ -10,3 +10,7 @@
 .gridItem {
     padding: 20px;
 }
+
+.gridChosen {
+    background-color: blue;
+}
