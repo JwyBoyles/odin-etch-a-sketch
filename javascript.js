@@ -8,7 +8,7 @@ button.addEventListener('click', () => {
   newGrid()
   }
   else {
-    input = prompt ("You selected a number out of range please chose a number between 1 and 100")
+    alert ("You selected a number out of range, click the button again and choose a number between 1 and 100")
   }
 });
 
