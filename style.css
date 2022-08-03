@@ -1,16 +1,15 @@
-* { 
-    border: 2px solid red;
-}
+
 
 #container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    width: 960px;
+    height: 960px;
+    display: inline-grid;
+    border: 2px solid blue;
+    
+    
 }
 
-.gridItem {
-    padding: 20px;
-}
 
 .gridChosen {
-    background-color: blue;
+    background-color: black;
 }

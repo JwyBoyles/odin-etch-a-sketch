@@ -1,14 +1,30 @@
 const container = document.querySelector('#container');
+const button = document.querySelector('#button');
+let input;
 
-function createGrid() {
+button.addEventListener('click', () => {
+  input = prompt("Please select a number between 1 and 100 to create a new grid");
+  if (input > 0 && input <= 100 && input != undefined) {
+  newGrid()
+  }
+  else {
+    input = prompt ("You selected a number out of range please chose a number between 1 and 100")
+  }
+});
+
+function originalGrid() {
     let div = document.createElement('div');
     container.appendChild(div);
     div.classList.add('gridItem')
 }
 
-for (let p = 0; p < 64; ++p) {
-    createGrid()
+container.style.gridTemplateColumns = `repeat(${16}, 1fr)`
+container.style.gridTemplateRows = `repeat(${16}, 1fr)`
+
+for (let p = 0; p < 256; ++p) {
+    originalGrid()
 }
+
 
 let gridItem = document.getElementsByClassName("gridItem");
 
@@ -18,5 +34,20 @@ gridItem[i].addEventListener('mouseenter', () => {
 });
 }
 
-
+function newGrid() {
+  for (let i = 0; i < gridItem.length; ++i){
+      gridItem[i].classList.remove('gridChosen');
+    };
+  
+container.style.gridTemplateColumns = `repeat(${input}, 1fr)`
+container.style.gridTemplateRows = `repeat(${input}, 1fr)`
+for (let p = 0; p < (input * input); ++p) {
+  originalGrid()
+}
+for (let i = 0; i < gridItem.length; ++i){
+gridItem[i].addEventListener('mouseenter', () => {
+  gridItem[i].classList.add('gridChosen');
+});
+}
+}
 
